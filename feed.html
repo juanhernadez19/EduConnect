@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduConnect - Publicaciones</title>
+
+    <!-- Usar el style.css principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EduConnect - Publicaciones</h1>
+    </header>
+
+    <!-- Cambiado para usar la clase .post-creator del style.css -->
+    <section id="publicar-section" class="post-creator">
+        <h3>Crear una nueva publicación</h3>
+
+        <form id="form-publicacion">
+            <textarea id="contenido" placeholder="¿Qué deseas compartir?" required></textarea>
+            
+            <select id="categoria" required>
+                <option value="">Seleccionar categoría</option>
+                <option value="dudas">Dudas académicas</option>
+                <option value="eventos">Eventos</option>
+                <option value="investigacion">Investigación</option>
+                <option value="recursos">Recursos</option>
+            </select>
+
+            <button type="submit" id="btnPost">Publicar</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section id="feed-section">
+        <h2>Publicaciones recientes</h2>
+        <!-- Añadida la clase .feed para que los estilos de feed se apliquen -->
+        <div id="feed" class="feed"></div>
+    </section>
+
+    <script src="feed.js"></script>
+
+</body>
+</html>

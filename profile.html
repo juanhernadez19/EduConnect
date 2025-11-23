@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - EduConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="nav">
+    <h2>EduConnect</h2>
+    <nav>
+        <a href="feed.html">Publicaciones</a>
+        <a href="#" id="logoutBtn">Cerrar sesión</a>
+    </nav>
+</header>
+
+<section class="profile-container">
+    <h2>Mi Perfil</h2>
+
+    <div id="profile"></div>
+</section>
+
+<script>
+document.getElementById("logoutBtn").onclick = () => {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+};
+
+// Cargar perfil del usuario
+(async () => {
+    const res = await fetch("http://localhost:5000/api/users/me", {
+        headers: { "x-access-token": localStorage.getItem("token") }
+    });
+
+    const user = await res.json();
+
+    document.getElementById("profile").innerHTML = `
+        <p><b>Nombre:</b> ${user.name}</p>
+        <p><b>Email:</b> ${user.email}</p>
+        <p><b>Universidad:</b> ${user.university}</p>
+        <p><b>Rol:</b> ${user.role}</p>
+    `;
+})();
+</script>
+
+</body>
+</html>

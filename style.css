@@ -272,3 +272,301 @@ footer .fa-brands:hover {
         gap: 10px;
     }
 }
+
+/* style for login, registro, feed and profile */
+
+.auth-body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.auth-container {
+    background: #fff;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 16px;
+    box-shadow: 0 8px 36px rgba(44,62,80,0.12);
+    padding: 28px 26px;
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: #2d6cdf;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.auth-container form {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.auth-container label {
+    text-align: left;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+.auth-container input[type="email"],
+.auth-container input[type="password"],
+.auth-container input[type="text"],
+.auth-container input[type="tel"],
+.auth-container input[type="number"],
+.auth-container textarea,
+.auth-container select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e1e8fb;
+    border-radius: 8px;
+    background: #fbfdff;
+    font-size: 1rem;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.auth-container input:focus,
+.auth-container textarea:focus,
+.auth-container select:focus {
+    outline: none;
+    border-color: #2d6cdf;
+    box-shadow: 0 4px 18px rgba(45,108,223,0.08);
+}
+
+.auth-container button[type="submit"],
+.auth-container .btn {
+    background: linear-gradient(90deg, #2d6cdf 60%, #5eead4 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(44,62,80,0.10);
+    transition: transform .16s, filter .12s;
+    margin-top: 8px;
+}
+
+.auth-container button:hover,
+.auth-container .btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(.96);
+}
+
+.auth-container .hint {
+    font-size: 0.95rem;
+    color: #566174;
+    margin-top: 12px;
+}
+
+.auth-container a {
+    color: #2d6cdf;
+    text-decoration: none;
+    font-weight: 700;
+}
+.auth-container a:hover { color: #1b3a6b; text-decoration: underline; }
+
+/* Small helper layout for feed/profile if you want a centered column */
+.auth-main {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+    .auth-container { padding: 18px 14px; border-radius: 12px; }
+    .auth-container h2 { font-size: 1.25rem; }
+}
+
+
+/* feed */
+
+.post-creator {
+    background: #fff;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(44,62,80,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-creator h3 {
+    margin: 0;
+    color: #2d6cdf;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.post-creator textarea {
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    padding: 12px 14px;
+    border: 1px solid #e1e8fb;
+    border-radius: 10px;
+    background: #fbfdff;
+    font-size: 1rem;
+    color: #222;
+    transition: box-shadow .15s, border-color .15s;
+}
+.post-creator textarea:focus {
+    outline: none;
+    border-color: #2d6cdf;
+    box-shadow: 0 6px 18px rgba(45,108,223,0.06);
+}
+
+/* Use a specific selector for the publish button to avoid conflicts */
+
+
+/* Botón publicar (post-creator) */
+
+.post-creator #btnPost,
+.post-creator button {    
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #2d6cdf 60%, #5eead4 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(44,62,80,0.08);
+    transition: transform .12s, filter .12s, box-shadow .12s;
+}
+
+.post-creator #btnPost:hover,
+.post-creator button:hover {
+    transform: translateY(-3px);
+    filter: brightness(.96);
+    box-shadow: 0 8px 22px rgba(44,62,80,0.12);
+}
+
+/* Select dentro del creador de publicaciones */
+.post-creator select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e1e8fb;
+    border-radius: 10px;
+    background: #fbfdff;
+    font-size: 1rem;
+    color: #222;
+}
+
+/* Contenedor del feed y posts individuales */
+.feed {
+    max-width: 900px;
+    margin: 18px auto 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 12px;
+}
+
+.feed .post {
+    background: #fff;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.05);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.feed .post .post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feed .post .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#e6eefc,#f7fbff);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d6cdf;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+    flex-shrink: 0;
+}
+
+.feed .post .meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.feed .post .meta .author {
+    font-weight: 700;
+    color: #1b3a6b;
+}
+
+.feed .post .meta .time {
+    font-size: 0.88rem;
+    color: #667085;
+}
+
+/* Contenido de la publicación */
+.feed .post p {
+    margin: 6px 0 0 0;
+    color: #333;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Acciones (like, comment, share) */
+.feed .post .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.feed .post .actions button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #2d6cdf;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background .12s, transform .12s, color .12s;
+}
+.feed .post .actions button:hover {
+    background: rgba(45,108,223,0.06);
+    transform: translateY(-2px);
+}
+
+/* Mensajes vacíos / placeholders */
+.feed .empty {
+    text-align: center;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+}
+
+/* Ajustes responsive */
+@media (max-width: 700px) {
+    .post-creator { margin: 12px 8px; padding: 12px; }
+    .post-creator #btnPost { width: 100%; align-self: stretch; }
+    .feed { padding: 0 8px; }
+    .feed .post { padding: 12px; }
+    .feed .post .post-header { gap: 10px; }
+}
