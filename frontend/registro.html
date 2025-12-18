@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EduConnect | Registro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+
+  <main class="auth-container">
+    <h1>EduConnect</h1>
+    <h2>Crear Cuenta</h2>
+
+    <form id="registerForm">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="email" id="email" placeholder="Correo institucional" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+
+      <select id="role">
+        <option value="estudiante">Estudiante</option>
+        <option value="docente">Docente</option>
+        <option value="investigador">Investigador</option>
+      </select>
+
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <p id="error" class="error"></p>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
